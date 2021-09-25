@@ -13,12 +13,6 @@ public class PretragaViewModel extends ViewModel {
 
     private MutableLiveData<Domen> domen;
 
-
-    public void pretraga(String naziv, DomenRepo domenRepo) {
-        Domen d = domenRepo.getDomen(naziv);
-        domen.setValue(d);
-    }
-
     public LiveData<Domen> getDomen() {
         if(domen == null) domen = new MutableLiveData<Domen>();
         return this.domen;

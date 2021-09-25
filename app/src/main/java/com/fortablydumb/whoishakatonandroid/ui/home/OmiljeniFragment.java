@@ -11,29 +11,57 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.fortablydumb.whoishakatonandroid.AppModule;
+import com.fortablydumb.whoishakatonandroid.Domen;
+import com.fortablydumb.whoishakatonandroid.databinding.FragmentIstorijaBinding;
 import com.fortablydumb.whoishakatonandroid.databinding.FragmentOmiljeniBinding;
+import com.fortablydumb.whoishakatonandroid.ui.notifications.DomenListAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class OmiljeniFragment extends Fragment {
 
     private OmiljeniViewModel homeViewModel;
     private FragmentOmiljeniBinding binding;
+    private RecyclerView rvOmiljeni;
+    private DomenListAdapter listAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(OmiljeniViewModel.class);
-
         binding = FragmentOmiljeniBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        AppModule am = AppModule.getInstance(getActivity().getApplication());
+
+        rvOmiljeni = binding.rvOmiljeni;
+        listAdapter = new DomenListAdapter(new ArrayList<>(), getActivity()) {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void DodajUOmiljene(Domen d) {
+
             }
-        });
+
+            @Override
+            public void Izbrisi(Domen d) {
+
+            }
+        };
+
+        rvOmiljeni.setAdapter(listAdapter);
+
+        LinearLayoutManager lm = new LinearLayoutManager(getActivity());
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rvOmiljeni.getContext(),
+                lm.getOrientation());
+        rvOmiljeni.addItemDecoration(dividerItemDecoration);
+        rvOmiljeni.setLayoutManager(lm);
+
+        List<Domen> istorija = am.getDomenRepo().getFavourites();
+        listAdapter.setLocalDataSet(istorija);
+
         return root;
     }
 

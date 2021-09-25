@@ -17,6 +17,9 @@ public interface DomenDao {
     @Query("SELECT * FROM domen WHERE omiljeni='true' ORDER BY poslednji_put_pretrazivan DESC")
     List<Domen> getFavourites();
 
+    @Query("UPDATE domen SET omiljeni='true' WHERE naziv=:naziv")
+    void addToFavourites(String naziv);
+
     @Query("SELECT * FROM domen WHERE naziv=:naziv")
     Domen findByName(String naziv);
 

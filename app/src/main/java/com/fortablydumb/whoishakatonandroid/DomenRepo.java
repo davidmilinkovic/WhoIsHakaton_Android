@@ -40,4 +40,12 @@ public class DomenRepo {
         domenDao.delete(d);
         domenDao.insert(d);
     }
+
+    public void deleteDomen(Domen d) {
+        domenDao.delete(d);
+    }
+
+    public void addToFavourites(Domen d) {
+        domenDao.addToFavourites(d.getNaziv());
+    }
 }
