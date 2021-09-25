@@ -23,6 +23,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fortablydumb.whoishakatonandroid.AppModule;
 import com.fortablydumb.whoishakatonandroid.DetaljiActivity;
+import com.fortablydumb.whoishakatonandroid.DetaljiActivity2;
 import com.fortablydumb.whoishakatonandroid.Domen;
 import com.fortablydumb.whoishakatonandroid.DomenWebservice;
 import com.fortablydumb.whoishakatonandroid.R;
@@ -35,6 +36,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class PretragaFragment extends Fragment {
@@ -73,16 +75,16 @@ public class PretragaFragment extends Fragment {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                try {
-                                    Domen d = Domen.FromJSONObject(new JSONObject(response));
-                                    Toast.makeText(getActivity(), d.getNaziv() + " " + d.getRegistar(), Toast.LENGTH_SHORT).show();
-                                    am.getDomenRepo().refreshDomen(d);
-                                    Intent i = new Intent(getActivity(), DetaljiActivity.class);
-                                    i.putExtra("naziv", naziv);
-                                    startActivity(i);
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
+                                Domen d = am.getDomenRepo().getDomen(naziv);
+                                if(d != null) {
+                                    am.getDomenRepo().refreshDomen(new Domen(naziv, d.getOmiljeni(), new Date(), response));
                                 }
+                                else {
+                                    am.getDomenRepo().insertDomen(new Domen(naziv, false, new Date(), response));
+                                }
+                                Intent i = new Intent(getActivity(), DetaljiActivity2.class);
+                                i.putExtra("naziv", naziv);
+                                startActivity(i);
                             }
                         }, new Response.ErrorListener() {
                     @Override

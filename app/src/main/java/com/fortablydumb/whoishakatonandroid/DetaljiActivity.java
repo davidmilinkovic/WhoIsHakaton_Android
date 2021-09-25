@@ -20,7 +20,6 @@ public class DetaljiActivity extends AppCompatActivity {
 
         am = AppModule.getInstance(getApplication());
         d = am.getDomenRepo().getDomen(getIntent().getStringExtra("naziv"));
-        ((TextView)findViewById(R.id.textView)).setText(d.getRegistar());
     }
 
     @Override

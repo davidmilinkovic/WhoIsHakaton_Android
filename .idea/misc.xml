@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.3140625" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.3967479674796748" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/activity_detalji.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/activity_detalji2.xml" value="0.12" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/activity_glavni.xml" value="0.25416666666666665" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/content_scrolling.xml" value="0.264" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/domen_list_item.xml" value="0.264" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/fragment_dashboard.xml" value="0.13020833333333334" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/fragment_istorija.xml" value="0.25416666666666665" />
@@ -13,22 +18,11 @@
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/fragment_pretraga.xml" value="0.25416666666666665" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/settings_activity.xml" value="0.25416666666666665" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
-        <entry key="..\:/whois/WhoIsHakaton_Android/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.14635416666666667" />
-        <entry key="..\:/whois/WhoIsHakaton_Android/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.14635416666666667" />
-        <entry key="..\:/whois/WhoIsHakaton_Android/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.14635416666666667" />
-        <entry key="..\:/whois/WhoIsHakaton_Android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
-        <entry key="..\:/whois/WhoIsHakaton_Android/app/src/main/res/drawable/ic_search_background.xml" value="0.14635416666666667" />
-        <entry key="..\:/whois/WhoIsHakaton_Android/app/src/main/res/drawable/ic_search_foreground.xml" value="0.14635416666666667" />
-        <entry key="..\:/whois/WhoIsHakaton_Android/app/src/main/res/layout/activity_detalji.xml" value="0.2" />
-        <entry key="..\:/whois/WhoIsHakaton_Android/app/src/main/res/layout/activity_glavni.xml" value="0.16666666666666666" />
-        <entry key="..\:/whois/WhoIsHakaton_Android/app/src/main/res/layout/fragment_pretraga.xml" value="0.264" />
-        <entry key="..\:/whois/WhoIsHakaton_Android/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
-        <entry key="..\:/whois/WhoIsHakaton_Android/app/src/main/res/menu/up_nav_menu.xml" value="0.264" />
-        <entry key="..\:/whois/WhoIsHakaton_Android/app/src/main/res/mipmap-anydpi-v26/ic_search.xml" value="0.14635416666666667" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/xml/root_preferences.xml" value="0.536" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -37,8 +37,7 @@ public class DomenRepo {
 
     // preuzima sa servera i upisuje umesto kesirane verzija
     public void refreshDomen(Domen d) {
-        domenDao.delete(d);
-        domenDao.insert(d);
+        domenDao.update(d);
     }
 
     public void deleteDomen(Domen d) {
@@ -51,5 +50,9 @@ public class DomenRepo {
 
     public void removeFromFavourites(Domen d) {
         domenDao.removeFromFavourites(d.getNaziv());
+    }
+
+    public void insertDomen(Domen d) {
+        domenDao.insert(d);
     }
 }

@@ -13,5 +13,6 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="textAppearanceHeadline1">@color/white</item>
+        <item name="android:textColor">#ccc</item>
     </style>
 </resources>

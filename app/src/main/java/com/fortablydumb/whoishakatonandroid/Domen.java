@@ -20,31 +20,38 @@ public class Domen {
     @ColumnInfo(name = "omiljeni")
     private Boolean omiljeni;
 
-    @ColumnInfo(name = "status")
-    private Boolean status;
-
-    @ColumnInfo(name = "datum_isteka")
-    private Date datumIsteka;
-
-    @ColumnInfo(name = "datum_registracije")
-    private Date datumRegistracije;
-
     @ColumnInfo(name = "poslednji_put_pretrazivan")
     private Date poslednjiPutPretrazivan;
 
-    @ColumnInfo(name = "registar")
-    private String registar;
+    @ColumnInfo(name = "raw_data")
+    private String rawData;
 
-    public Domen(String naziv, Boolean omiljeni, Boolean status, Date datumIsteka, Date datumRegistracije, Date poslednjiPutPretrazivan, String registar) {
+    public Domen(@NonNull String naziv, Boolean omiljeni, Date poslednjiPutPretrazivan,String rawData) {
         this.naziv = naziv;
         this.omiljeni = omiljeni;
-        this.status = status;
-        this.datumIsteka = datumIsteka;
-        this.datumRegistracije = datumRegistracije;
         this.poslednjiPutPretrazivan = poslednjiPutPretrazivan;
-        this.registar = registar;
+        this.rawData = rawData;
     }
 
+    public void setNaziv(@NonNull String naziv) {
+        this.naziv = naziv;
+    }
+
+    public void setOmiljeni(Boolean omiljeni) {
+        this.omiljeni = omiljeni;
+    }
+
+    public void setPoslednjiPutPretrazivan(Date poslednjiPutPretrazivan) {
+        this.poslednjiPutPretrazivan = poslednjiPutPretrazivan;
+    }
+
+
+
+    public void setRawData(String rawData) {
+        this.rawData = rawData;
+    }
+
+    @NonNull
     public String getNaziv() {
         return naziv;
     }
@@ -53,55 +60,12 @@ public class Domen {
         return omiljeni;
     }
 
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public Date getDatumIsteka() {
-        return datumIsteka;
-    }
-
-    public Date getDatumRegistracije() {
-        return datumRegistracije;
-    }
-
     public Date getPoslednjiPutPretrazivan() {
         return poslednjiPutPretrazivan;
     }
 
-    public String getRegistar() {
-        return registar;
-    }
 
-    public void setNaziv(String naziv) {
-        this.naziv = naziv;
-    }
-
-    public void setOmiljeni(Boolean omiljeni) {
-        this.omiljeni = omiljeni;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
-    public void setDatumIsteka(Date datumIsteka) {
-        this.datumIsteka = datumIsteka;
-    }
-
-    public void setDatumRegistracije(Date datumRegistracije) {
-        this.datumRegistracije = datumRegistracije;
-    }
-
-    public void setPoslednjiPutPretrazivan(Date poslednjiPutPretrazivan) {
-        this.poslednjiPutPretrazivan = poslednjiPutPretrazivan;
-    }
-
-    public void setRegistar(String registar) {
-        this.registar = registar;
-    }
-
-    public static Domen FromJSONObject(JSONObject obj) throws JSONException {
-        return new Domen(obj.getString("Domain Name"), false, null, null, null, null, obj.getString("Registrar"));
+    public String getRawData() {
+        return rawData;
     }
 }
