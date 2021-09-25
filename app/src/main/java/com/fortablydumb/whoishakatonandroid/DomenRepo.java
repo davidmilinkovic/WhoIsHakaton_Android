@@ -20,17 +20,22 @@ public class DomenRepo {
         this.executor = executor;
     }
 
-    // daje sve iz baze
+    // daje sve iz istorije
     public List<Domen> getAll() {
         return domenDao.getAll();
     }
 
-    public Domen getDomen(String naziv) {
-        Domen d = domenDao.findByName(naziv);
-        return d;
+    // daje omiljene
+    public List<Domen> getFavourites() {
+        return domenDao.getFavourites();
     }
 
+    // daje iz kesa po nazivu
+    public Domen getDomen(String naziv) {
+        return domenDao.findByName(naziv);
+    }
 
+    // preuzima sa servera i upisuje umesto kesirane verzija
     public void refreshDomen(Domen d) {
         domenDao.delete(d);
         domenDao.insert(d);

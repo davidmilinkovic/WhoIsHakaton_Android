@@ -11,8 +11,11 @@ import java.util.List;
 
 @Dao
 public interface DomenDao {
-    @Query("SELECT * FROM domen")
+    @Query("SELECT * FROM domen ORDER BY poslednji_put_pretrazivan DESC")
     List<Domen> getAll();
+
+    @Query("SELECT * FROM domen WHERE omiljeni='true' ORDER BY poslednji_put_pretrazivan DESC")
+    List<Domen> getFavourites();
 
     @Query("SELECT * FROM domen WHERE naziv=:naziv")
     Domen findByName(String naziv);
