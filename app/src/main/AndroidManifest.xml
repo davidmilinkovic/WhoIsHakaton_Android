@@ -10,8 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WhoIsHakaton_Android">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".PodesavanjaActivity"
+            android:exported="true"
+            android:label="@string/title_activity_podesavanja" />
+        <activity
+            android:name=".DetaljiActivity"
+            android:exported="true" />
+        <activity
+            android:name=".GlavniActivity"
+            android:exported="true"
+            android:label="@string/title_activity_glavni">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
