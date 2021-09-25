@@ -1,19 +1,26 @@
 package com.fortablydumb.whoishakatonandroid.ui.dashboard;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.fortablydumb.whoishakatonandroid.Domen;
+import com.fortablydumb.whoishakatonandroid.DomenRepo;
+
 public class PretragaViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    private MutableLiveData<Domen> domen;
 
-    public PretragaViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+
+    public void pretraga(String naziv, DomenRepo domenRepo) {
+        Domen d = domenRepo.getDomen(naziv);
+        domen.setValue(d);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<Domen> getDomen() {
+        if(domen == null) domen = new MutableLiveData<Domen>();
+        return this.domen;
     }
 }

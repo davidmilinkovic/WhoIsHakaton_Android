@@ -8,6 +8,7 @@ public class OmiljeniViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
+
     public OmiljeniViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is home fragment");
