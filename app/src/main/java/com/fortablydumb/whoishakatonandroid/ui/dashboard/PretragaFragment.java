@@ -31,6 +31,12 @@ import com.fortablydumb.whoishakatonandroid.databinding.FragmentPretragaBinding;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class PretragaFragment extends Fragment {
 
     private PretragaViewModel pretragaVm;
@@ -46,11 +52,19 @@ public class PretragaFragment extends Fragment {
 
         AppModule am = AppModule.getInstance(getActivity().getApplication());
 
+        AutoCompleteTextView textViewSuggestions = (AutoCompleteTextView) binding.autocompleteTextView;
+
+        String [] listaPretrage = this.vratiListuPretrage(am);
+
+        ArrayAdapter<String> adapter =
+                new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, listaPretrage);
+        textViewSuggestions.setAdapter(adapter);
+
         binding.btnPretraga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String naziv = binding.editProba.getText().toString();
+                String naziv = textViewSuggestions.getText().toString();
 
                 RequestQueue queue = Volley.newRequestQueue(getActivity());
                 String url = getString(R.string.pajinKomp);
@@ -80,17 +94,16 @@ public class PretragaFragment extends Fragment {
                 queue.add(stringRequest);
             }
         });
-
-        final TextView textView = binding.textViewProba;
-        pretragaVm.getDomen().observe(getViewLifecycleOwner(), new Observer<Domen>() {
-            @Override
-            public void onChanged(@Nullable Domen d) {
-                if(d != null) {
-                    textView.setText(d.getRegistar());
-                }
-            }
-        });
         return root;
+    }
+
+    String[] vratiListuPretrage(AppModule am){
+        List<Domen> lista = am.getDomenRepo().getAll();
+        String[] returnLista = new String[lista.size()];
+        for(int i = 0; i < lista.size(); i++) {
+            returnLista[i] = lista.get(i).getNaziv();
+        }
+        return returnLista;
     }
 
     @Override
