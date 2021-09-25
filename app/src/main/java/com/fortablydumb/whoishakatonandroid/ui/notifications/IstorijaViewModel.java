@@ -1,19 +1,18 @@
 package com.fortablydumb.whoishakatonandroid.ui.notifications;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.fortablydumb.whoishakatonandroid.Domen;
+
+import java.util.List;
+
 public class IstorijaViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    private MutableLiveData<List<Domen>> domeni;
 
-    public IstorijaViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
-    }
-
-    public LiveData<String> getText() {
-        return mText;
+    public MutableLiveData<List<Domen>> getDomeni() {
+        if(domeni == null) domeni = new MutableLiveData<>();
+        return this.domeni;
     }
 }

@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_pretraga">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_omiljeni"
         android:name="com.fortablydumb.whoishakatonandroid.ui.home.OmiljeniFragment"
-        android:label="@string/title_home"
+        android:label="Omiljeni"
         tools:layout="@layout/fragment_omiljeni" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_pretraga"
         android:name="com.fortablydumb.whoishakatonandroid.ui.dashboard.PretragaFragment"
-        android:label="@string/title_dashboard"
+        android:label="Pretraga"
         tools:layout="@layout/fragment_pretraga" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_istorija"
         android:name="com.fortablydumb.whoishakatonandroid.ui.notifications.IstorijaFragment"
-        android:label="@string/title_notifications"
+        android:label="Istorija"
         tools:layout="@layout/fragment_istorija" />
 </navigation>

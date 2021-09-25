@@ -101,12 +101,13 @@ public class Domen {
         this.registar = registar;
     }
 
-    public Domen(String naziv, String registar) {
+    public Domen(String naziv, String registar, Boolean omiljeni) {
         this.naziv = naziv;
         this.registar = registar;
+        this.omiljeni = omiljeni;
     }
 
     public static Domen FromJSONObject(JSONObject obj) throws JSONException {
-        return new Domen(obj.getString("naziv"), obj.getString("registar"));
+        return new Domen(obj.getString("Domain Name"), obj.getString("Registrar"), false);
     }
 }
