@@ -21,6 +21,16 @@ public abstract class DomenListAdapter extends RecyclerView.Adapter<DomenListAda
     private final Context context;
     private List<Domen> localDataSet;
 
+    public void deleteAtPosition(int position) {
+        localDataSet.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public void setAtPosition(int position, Domen domen) {
+        localDataSet.set(position, domen);
+        notifyItemChanged(position);
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView txtDomen;
         private final TextView txtPoslednjaPretraga;
@@ -89,17 +99,17 @@ public abstract class DomenListAdapter extends RecyclerView.Adapter<DomenListAda
     }
 
     public void DodajUOmiljeneAt(int position) {
-        DodajUOmiljene(localDataSet.get(position));
+        DodajUOmiljene(localDataSet.get(position), position);
     }
     public void IzbaciIzOmiljenihAt(int position) {
-        IzbaciIzOmiljenih(localDataSet.get(position));
+        IzbaciIzOmiljenih(localDataSet.get(position), position);
     }
 
     public void IzbrisiAt(int position) {
-        Izbrisi(localDataSet.get(position));
+        Izbrisi(localDataSet.get(position), position);
     }
 
-    public abstract void DodajUOmiljene(Domen d);
-    public abstract void IzbaciIzOmiljenih(Domen d);
-    public abstract void Izbrisi(Domen d);
+    public abstract void DodajUOmiljene(Domen d, int position);
+    public abstract void IzbaciIzOmiljenih(Domen d, int position);
+    public abstract void Izbrisi(Domen d, int position);
 }

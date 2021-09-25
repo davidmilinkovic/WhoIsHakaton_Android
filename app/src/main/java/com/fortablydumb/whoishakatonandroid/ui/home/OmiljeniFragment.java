@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,6 +21,7 @@ import com.fortablydumb.whoishakatonandroid.Domen;
 import com.fortablydumb.whoishakatonandroid.databinding.FragmentIstorijaBinding;
 import com.fortablydumb.whoishakatonandroid.databinding.FragmentOmiljeniBinding;
 import com.fortablydumb.whoishakatonandroid.ui.notifications.DomenListAdapter;
+import com.fortablydumb.whoishakatonandroid.ui.notifications.SwipeCallbackIstorija;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,22 +43,27 @@ public class OmiljeniFragment extends Fragment {
         rvOmiljeni = binding.rvOmiljeni;
         listAdapter = new DomenListAdapter(new ArrayList<>(), getActivity()) {
             @Override
-            public void DodajUOmiljene(Domen d) {
-
+            public void DodajUOmiljene(Domen d, int position) {
+                return;
             }
 
             @Override
-            public void IzbaciIzOmiljenih(Domen d) {
-
+            public void IzbaciIzOmiljenih(Domen d, int position) {
+                am.getDomenRepo().removeFromFavourites(d);
+                listAdapter.deleteAtPosition(position);
             }
 
             @Override
-            public void Izbrisi(Domen d) {
-
+            public void Izbrisi(Domen d, int position) {
+                return;
             }
         };
 
         rvOmiljeni.setAdapter(listAdapter);
+
+        ItemTouchHelper itemTouchHelper = new
+                ItemTouchHelper(new SwipeCallbackOmiljeni(listAdapter));
+        itemTouchHelper.attachToRecyclerView(rvOmiljeni);
 
         LinearLayoutManager lm = new LinearLayoutManager(getActivity());
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rvOmiljeni.getContext(),

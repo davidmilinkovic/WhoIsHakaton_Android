@@ -37,20 +37,21 @@ public class IstorijaFragment extends Fragment {
         rvIstorija = binding.rvIstorija;
         listAdapter = new DomenListAdapter(new ArrayList<>(), getActivity()) {
             @Override
-            public void DodajUOmiljene(Domen d) {
+            public void DodajUOmiljene(Domen d, int position) {
                 am.getDomenRepo().addToFavourites(d);
-                listAdapter.setLocalDataSet(am.getDomenRepo().getAll());
+                listAdapter.setAtPosition(position, am.getDomenRepo().getDomen(d.getNaziv()));
             }
 
             @Override
-            public void IzbaciIzOmiljenih(Domen d) {
+            public void IzbaciIzOmiljenih(Domen d, int position) {
                 return;
             }
 
             @Override
-            public void Izbrisi(Domen d) {
+            public void Izbrisi(Domen d, int position) {
                 am.getDomenRepo().deleteDomen(d);
-                listAdapter.setLocalDataSet(am.getDomenRepo().getAll());
+                listAdapter.deleteAtPosition(position);
+
             }
         };
 
