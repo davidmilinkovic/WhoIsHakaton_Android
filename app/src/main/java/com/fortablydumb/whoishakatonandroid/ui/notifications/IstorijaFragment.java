@@ -43,6 +43,11 @@ public class IstorijaFragment extends Fragment {
             }
 
             @Override
+            public void IzbaciIzOmiljenih(Domen d) {
+                return;
+            }
+
+            @Override
             public void Izbrisi(Domen d) {
                 am.getDomenRepo().deleteDomen(d);
                 listAdapter.setLocalDataSet(am.getDomenRepo().getAll());

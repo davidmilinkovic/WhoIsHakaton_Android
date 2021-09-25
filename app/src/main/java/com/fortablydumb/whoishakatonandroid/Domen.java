@@ -34,7 +34,7 @@ public class Domen {
 
     @ColumnInfo(name = "registar")
     private String registar;
-/*
+
     public Domen(String naziv, Boolean omiljeni, Boolean status, Date datumIsteka, Date datumRegistracije, Date poslednjiPutPretrazivan, String registar) {
         this.naziv = naziv;
         this.omiljeni = omiljeni;
@@ -44,7 +44,7 @@ public class Domen {
         this.poslednjiPutPretrazivan = poslednjiPutPretrazivan;
         this.registar = registar;
     }
-*/
+
     public String getNaziv() {
         return naziv;
     }
@@ -101,13 +101,7 @@ public class Domen {
         this.registar = registar;
     }
 
-    public Domen(String naziv, String registar, Boolean omiljeni) {
-        this.naziv = naziv;
-        this.registar = registar;
-        this.omiljeni = omiljeni;
-    }
-
     public static Domen FromJSONObject(JSONObject obj) throws JSONException {
-        return new Domen(obj.getString("Domain Name"), obj.getString("Registrar"), false);
+        return new Domen(obj.getString("Domain Name"), false, null, null, null, null, obj.getString("Registrar"));
     }
 }

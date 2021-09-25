@@ -48,4 +48,8 @@ public class DomenRepo {
     public void addToFavourites(Domen d) {
         domenDao.addToFavourites(d.getNaziv());
     }
+
+    public void removeFromFavourites(Domen d) {
+        domenDao.removeFromFavourites(d.getNaziv());
+    }
 }

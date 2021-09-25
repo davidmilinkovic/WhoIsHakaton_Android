@@ -91,11 +91,15 @@ public abstract class DomenListAdapter extends RecyclerView.Adapter<DomenListAda
     public void DodajUOmiljeneAt(int position) {
         DodajUOmiljene(localDataSet.get(position));
     }
+    public void IzbaciIzOmiljenihAt(int position) {
+        IzbaciIzOmiljenih(localDataSet.get(position));
+    }
 
     public void IzbrisiAt(int position) {
         Izbrisi(localDataSet.get(position));
     }
 
     public abstract void DodajUOmiljene(Domen d);
+    public abstract void IzbaciIzOmiljenih(Domen d);
     public abstract void Izbrisi(Domen d);
 }

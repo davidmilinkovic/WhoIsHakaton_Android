@@ -46,6 +46,11 @@ public class OmiljeniFragment extends Fragment {
             }
 
             @Override
+            public void IzbaciIzOmiljenih(Domen d) {
+
+            }
+
+            @Override
             public void Izbrisi(Domen d) {
 
             }
