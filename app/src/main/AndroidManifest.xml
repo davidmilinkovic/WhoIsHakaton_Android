@@ -13,6 +13,7 @@
         <activity
             android:name=".DetaljiActivity2"
             android:exported="true"
+            android:windowSoftInputMode="adjustPan"
             android:theme="@style/Theme.WhoIsHakaton_Android.NoActionBar" />
         <activity
             android:name=".PodesavanjaActivity"
@@ -24,6 +25,7 @@
         <activity
             android:name=".GlavniActivity"
             android:exported="true"
+            android:windowSoftInputMode="adjustResize"
             android:label="@string/title_activity_glavni">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -9,6 +9,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -35,27 +36,39 @@ public class DetaljiActivity2 extends AppCompatActivity {
 
         binding = ActivityDetalji2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        String naziv = getIntent().getStringExtra("naziv");
 
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
         CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
-        toolBarLayout.setTitle(getTitle());
+        toolBarLayout.setTitle(naziv);
 
         FloatingActionButton fab = binding.fab;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                if(d.getOmiljeni()) {
+                    am.getDomenRepo().removeFromFavourites(d);
+                    d.setOmiljeni(false);
+                    Snackbar.make(view, "Domen uklonjen iz omiljenih!", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+                else {
+                    am.getDomenRepo().addToFavourites(d);
+                    d.setOmiljeni(true);
+                    Snackbar.make(view, "Domen dodat u omiljene!", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+                promenaBojeFab(fab);
             }
         });
 
-        String naziv = getIntent().getStringExtra("naziv");
 
-        ((Toolbar)findViewById(R.id.toolbar)).setTitle(naziv);
 
         am = AppModule.getInstance(getApplication());
         d = am.getDomenRepo().getDomen(naziv);
+
+        promenaBojeFab(fab);
 
         try {
             JSONObject obj = new JSONObject(d.getRawData());
@@ -138,5 +151,20 @@ public class DetaljiActivity2 extends AppCompatActivity {
         catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    private void promenaBojeFab(FloatingActionButton fab) {
+        if(d.getOmiljeni()) {
+            fab.setSupportBackgroundTintList(ContextCompat.getColorStateList(this, R.color.fav));
+        }
+        else {
+            fab.setSupportBackgroundTintList(ContextCompat.getColorStateList(this, R.color.gray));
+        }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return  true;
     }
 }

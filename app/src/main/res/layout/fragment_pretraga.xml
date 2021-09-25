@@ -5,32 +5,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal|center_vertical"
     tools:context=".ui.dashboard.PretragaFragment">
 
+
     <LinearLayout
-        android:layout_marginTop="100px"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
+        android:padding="16dp"
         android:layout_height="wrap_content"
-        android:weightSum="100">
+        >
 
         <AutoCompleteTextView
             android:id="@+id/autocompleteTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:layout_weight="95"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="#ccc"
+            android:hint="Unesite domen za pretragu..."
+            android:padding="014dp"
             android:minHeight="48dp"
+            android:inputType="textUri"
             tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageButton
+        <Button
             android:id="@+id/btnPretraga"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:layout_marginBottom="30px"
-            android:background="@color/teal_700"
-            android:src="@drawable/ic_baseline_search_24"
-            tools:ignore="SpeakableTextPresentCheck"></ImageButton>
+            android:layout_margin="4dp"
+            android:padding="16dp"
+            android:text="Pretraga"
+            android:textAllCaps="false"
+            android:drawableLeft="@drawable/ic_baseline_search_24"
+            android:drawableTint="@color/white"
+            android:textColor="@color/white"
+            android:textAlignment="viewStart"
+            tools:ignore="SpeakableTextPresentCheck" />
+
     </LinearLayout>
 </LinearLayout>
