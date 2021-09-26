@@ -1,5 +1,6 @@
 package com.fortablydumb.whoishakatonandroid.ui.dashboard;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -66,15 +67,20 @@ public class PretragaFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                String naziv = textViewSuggestions.getText().toString();
+                String naziv = textViewSuggestions.getText().toString().trim();
 
                 RequestQueue queue = Volley.newRequestQueue(getActivity());
                 String url = getString(R.string.pajinKomp);
+
+                ProgressDialog pd = new ProgressDialog(getActivity());
+                pd.setMessage("Komunikacija sa serverom...");
+                pd.show();
 
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, url + "/data?url=" + naziv,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
+                                pd.cancel();
                                 Domen d = am.getDomenRepo().getDomen(naziv);
                                 if(d != null) {
                                     am.getDomenRepo().refreshDomen(new Domen(naziv, d.getOmiljeni(), new Date(), response));
@@ -89,7 +95,8 @@ public class PretragaFragment extends Fragment {
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getActivity(), "Voley error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                        pd.cancel();
+                        Toast.makeText(getActivity(), "Greška pri preuzimanju podataka.", Toast.LENGTH_SHORT).show();
                     }
                 });
 

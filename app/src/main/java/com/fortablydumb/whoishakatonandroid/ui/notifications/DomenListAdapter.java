@@ -18,6 +18,8 @@ import com.fortablydumb.whoishakatonandroid.DetaljiActivity2;
 import com.fortablydumb.whoishakatonandroid.Domen;
 import com.fortablydumb.whoishakatonandroid.R;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public abstract class DomenListAdapter extends RecyclerView.Adapter<DomenListAdapter.ViewHolder> {
@@ -93,18 +95,25 @@ public abstract class DomenListAdapter extends RecyclerView.Adapter<DomenListAda
         Domen d = localDataSet.get(position);
         viewHolder.getTxtDomen().setText(d.getNaziv());
         if(d.getPoslednjiPutPretrazivan() != null) {
-            viewHolder.getTxtPoslednjaPretraga().setText(d.getPoslednjiPutPretrazivan().toString());
+            String pattern = "dd.MM.yyyy. HH:mm:ss";
+
+            DateFormat df = new SimpleDateFormat(pattern);
+
+            String strDate = df.format(d.getPoslednjiPutPretrazivan());
+
+            viewHolder.getTxtPoslednjaPretraga().setText(strDate);
         }
         viewHolder.getImgFav().setVisibility(d.getOmiljeni() ? View.VISIBLE : View.GONE);
         viewHolder.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getContext(), DetaljiActivity2.class);
-                i.putExtra("naziv", d.getNaziv());
-                ((AppCompatActivity)context).startActivity(i);
+                itemKliknut(d.getNaziv());
+
             }
         });
     }
+
+    public abstract void itemKliknut(String naziv);
 
     public void toastItem(int position) {
         Toast.makeText(context, localDataSet.get(position).getNaziv(), Toast.LENGTH_SHORT).show();

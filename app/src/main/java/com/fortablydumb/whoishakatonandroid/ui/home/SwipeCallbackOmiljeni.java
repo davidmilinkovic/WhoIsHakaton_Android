@@ -37,7 +37,7 @@ public class SwipeCallbackOmiljeni extends ItemTouchHelper.SimpleCallback {
                     itemView.getBottom());
 
         } else if (dX < 0) { // Swiping to the left
-            background = new ColorDrawable(Color.RED);
+            background = new ColorDrawable(mAdapter.getContext().getColor(R.color.fav));
             background.setBounds(itemView.getRight() + ((int) dX) - backgroundCornerOffset,
                     itemView.getTop(), itemView.getRight(), itemView.getBottom());
         } else { // view is unSwiped

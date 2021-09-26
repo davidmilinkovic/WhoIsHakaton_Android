@@ -31,12 +31,25 @@
             android:text="Domen" />
 
 
-        <TextView
-            android:id="@+id/txtPoslednjaPretraga"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:text="Poslednji pristup" />
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="4dp"
+                android:text="Poslednja pretraga: " />
+            <TextView
+                android:id="@+id/txtPoslednjaPretraga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="?textAppearanceHeadline1"
+                android:text="Poslednji pristup" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <ImageView
