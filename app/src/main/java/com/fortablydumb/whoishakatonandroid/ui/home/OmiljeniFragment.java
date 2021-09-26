@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -30,6 +31,7 @@ import com.fortablydumb.whoishakatonandroid.Domen;
 import com.fortablydumb.whoishakatonandroid.R;
 import com.fortablydumb.whoishakatonandroid.databinding.FragmentIstorijaBinding;
 import com.fortablydumb.whoishakatonandroid.databinding.FragmentOmiljeniBinding;
+import com.fortablydumb.whoishakatonandroid.ui.dashboard.PretragaFragment;
 import com.fortablydumb.whoishakatonandroid.ui.notifications.DomenListAdapter;
 import com.fortablydumb.whoishakatonandroid.ui.notifications.SwipeCallbackIstorija;
 
@@ -56,36 +58,7 @@ public class OmiljeniFragment extends Fragment {
         listAdapter = new DomenListAdapter(new ArrayList<>(), getActivity()) {
             @Override
             public void itemKliknut(String naziv) {
-                RequestQueue queue = Volley.newRequestQueue(getActivity());
-                String url = getString(R.string.pajinKomp);
-
-                ProgressDialog pd = new ProgressDialog(getActivity());
-                pd.setMessage("Komunikacija sa serverom...");
-                pd.show();
-
-                StringRequest stringRequest = new StringRequest(Request.Method.GET, url + "/data?url=" + naziv,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                pd.cancel();
-                                Domen d = am.getDomenRepo().getDomen(naziv);
-                                am.getDomenRepo().refreshDomen(new Domen(naziv, d.getOmiljeni(), new Date(), response));
-                                Intent i = new Intent(getActivity(), DetaljiActivity2.class);
-                                i.putExtra("naziv", naziv);
-                                startActivity(i);
-                            }
-                        }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        pd.cancel();
-                        Intent i = new Intent(getActivity(), DetaljiActivity2.class);
-                        i.putExtra("naziv", naziv);
-                        i.putExtra("kesirano", true);
-                        startActivity(i);
-                    }
-                });
-
-                queue.add(stringRequest);
+                PretragaFragment.pretraga(getActivity(), naziv, am);
             }
 
             @Override
@@ -129,6 +102,8 @@ public class OmiljeniFragment extends Fragment {
         listAdapter.setLocalDataSet(istorija);
         super.onResume();
     }
+
+
 
     @Override
     public void onDestroyView() {

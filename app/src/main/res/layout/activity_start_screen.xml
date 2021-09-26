@@ -3,23 +3,29 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@color/black"
+    android:background="?colorAccent"
     android:gravity="center"
     android:orientation="vertical">
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
-        android:src="@drawable/logo"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="80sp"
+        android:text="KO.JE"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppinsbold"
+        android:shadowDx="5"
+        android:shadowDy="4"
+        android:shadowColor="#44000000"
+        android:shadowRadius="20"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vaš domen menadžer"
+        android:text="@string/slogan"
         android:layout_gravity="center"
         android:textColor="@color/white"
-        android:textSize="50dp"
+        android:fontFamily="@font/poppinslight"
+        android:textSize="30dp"
         android:textAlignment="center" />
 </LinearLayout>

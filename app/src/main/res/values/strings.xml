@@ -1,29 +1,29 @@
 <resources>
-    <string name="app_name">WhoIsHakaton_Android</string>
-    <string name="title_activity_glavni">GlavniActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_activity_podesavanja">PodesavanjaActivity</string>
+    <string name="app_name" translatable="false">WhoIsHakaton_Android</string>
+    <string name="title_activity_glavni" translatable="false">GlavniActivity</string>
+    <string name="title_home" translatable="false">Home</string>
+    <string name="title_dashboard" translatable="false">Dashboard</string>
+    <string name="title_notifications" translatable="false">Notifications</string>
+    <string name="title_activity_podesavanja" translatable="true">Podešavanja</string>
 
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
+    <string name="messages_header" translatable="false">Messages</string>
+    <string name="sync_header" translatable="false">Sync</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
+    <string name="signature_title" translatable="false">Your signature</string>
+    <string name="reply_title" translatable="false">Default reply action</string>
 
     <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    <string name="sync_title" translatable="false">Sync email periodically</string>
+    <string name="attachment_title" translatable="false">Download incoming attachments</string>
+    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails
     </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
 
-    <string name="pajinKomp">http://192.168.1.18:5000</string>
-    <string name="title_activity_detalji2">DetaljiActivity2</string>
-    <string name="large_text">
+    <string name="server" translatable="false">http://whoisapi.geasoft.net</string>
+    <string name="title_activity_detalji2" translatable="false">DetaljiActivity2</string>
+    <string name="large_text" translatable="false">
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
@@ -112,7 +112,53 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_maps">MapsActivity</string>
-    <string name="preference_file_key">prefffff</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="title_activity_maps" translatable="false">MapsActivity</string>
+    <string name="preference_file_key" translatable="false">prefffff</string>
+    <string name="dodatUOmiljene">Domen dodat u omiljene!</string>
+    <string name="alarmIstekDomena">Alarm za istek domena</string>
+    <string name="emailObavestenje">E-mail obaveštenje</string>
+    <string name="pushNotifikacija">Push notifikacija</string>
+    <string name="zatvori">Zatvori</string>
+    <string name="emailAlarm">Email alarm</string>
+    <string name="obavestenjeEmail">Da bi ste uključili obaveštenja putem emaila, morate navesti svoju email adresu u podešavanjima</string>
+    <string name="ok">Ok</string>
+    <string name="nazivDomena">Naziv domena</string>
+    <string name="registar">Registar</string>
+    <string name="registrar">Registrar</string>
+    <string name="registrant">Registrant</string>
+    <string name="datumRegistracije">Datum registracije</string>
+    <string name="datumIsteka">Datum isteka</string>
+    <string name="isticeZa">Ističe za</string>
+    <string name="dana">\" dana\"</string>
+    <string name="komunikacijaSaServerom">Komunikacija sa serverom...</string>
+    <string name="alarmUspesnoKreiran">Uspešno ste kreirali alarm za domen!</string>
+    <string name="alarmVecPostoji">Alarm za ovaj domen je već kreiran.</string>
+    <string name="greskaVolley">Greška pri preuzimanju podataka.</string>
+    <string name="kesiranaVerzija">Keširana verzija</string>
+    <string name="osnovniPodaci">Osnovni podaci</string>
+    <string name="kontaktRegistrant">Kontakt (registrant)</string>
+    <string name="sviPodaci">Svi podaci</string>
+    <string name="kontaktAdministrator">Kontakt (administrator)</string>
+    <string name="kontaktTeh">Kontakt (tehničko lice)</string>
+    <string name="alarmiZaDomene">Alarmi za domene</string>
+    <string name="vasaEmail">Vaša email adresa</string>
+    <string name="ponistiPush">Poništi sve alarme za Push notifikacije</string>
+    <string name="pismoApp">Pismo aplikacije</string>
+    <string name="unesiteDomen">Unesite domen za pretragu...</string>
+    <string name="poslednjaPretraga">Poslednja pretraga:</string>
+    <string name="slogan">Vaš omiljeni domen-menadžer 🚀</string>
+    <string name="istorija">Istorija</string>
+    <string name="pretraga">Pretraga</string>
+    <string name="omiljeni">Omiljeni</string>
+    <string name="domenUklonjen">Domen uklonjen iz omiljenih!</string>
+    <string name="adresa">Adresa</string>
+    <string name="kontakt">Kontakt</string>
+    <string name="postanski">Poštanski kod</string>
+    <string name="drzava">Država</string>
+    <string name="organizacija">Organizacija</string>
+    <string name="region">Region</string>
+    <string name="pib">PIB</string>
+    <string name="matBr">Matični broj</string>
+    <string name="uspesnoPush">Uspešno ste otkazali push notifikacije za sve domene!</string>
 </resources>

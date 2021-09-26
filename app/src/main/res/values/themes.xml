@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="textAppearanceHeadline1">@color/black</item>
         <item name="android:textColor">#777</item>
-
+        <item name="android:fontFamily">@font/poppinsregular</item>
     </style>
 
     <style name="Theme.WhoIsHakaton_Android.NoActionBar">

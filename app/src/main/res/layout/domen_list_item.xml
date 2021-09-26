@@ -27,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
+            android:fontFamily="@font/poppinssemibold"
             android:textColor="?textAppearanceHeadline1"
             android:text="Domen" />
 
@@ -40,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="4dp"
-                android:text="Poslednja pretraga: " />
+                android:text="@string/poslednjaPretraga" />
             <TextView
                 android:id="@+id/txtPoslednjaPretraga"
                 android:layout_width="wrap_content"

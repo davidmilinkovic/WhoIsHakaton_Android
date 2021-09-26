@@ -40,7 +40,7 @@
             android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:textColor="?textAppearanceHeadline1"
-            android:text="Osnovni podaci"
+            android:text="@string/osnovniPodaci"
             android:textSize="18sp"
             android:layout_height="wrap_content" />
         </LinearLayout>
@@ -85,7 +85,7 @@
             android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:textColor="?textAppearanceHeadline1"
-            android:text="Kontakt  (registrant)"
+            android:text="@string/kontaktRegistrant"
             android:textSize="18sp"
             android:layout_height="wrap_content" />
         </LinearLayout>
@@ -130,7 +130,7 @@
             android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:textColor="?textAppearanceHeadline1"
-            android:text="Kontakt (administrator)"
+            android:text="@string/kontaktAdministrator"
             android:textSize="18sp"
             android:layout_height="wrap_content" />
         </LinearLayout>
@@ -175,7 +175,7 @@
             android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:textColor="?textAppearanceHeadline1"
-            android:text="Kontakt (tehničko lice)"
+            android:text="@string/kontaktTeh"
             android:textSize="18sp"
             android:layout_height="wrap_content" />
         </LinearLayout>
@@ -266,7 +266,7 @@
             android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:textColor="?textAppearanceHeadline1"
-            android:text="Svi podaci"
+            android:text="@string/sviPodaci"
             android:textSize="18sp"
             android:layout_height="wrap_content" />
         </LinearLayout>

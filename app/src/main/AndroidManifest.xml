@@ -4,6 +4,7 @@
 
     <application
         android:allowBackup="true"
+        android:configChanges="locale"
         android:icon="@mipmap/ic_launcher"
         android:label="Ko.Je"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -11,16 +12,18 @@
         android:theme="@style/Theme.WhoIsHakaton_Android"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".BaseActivity"
+            android:exported="true" />
+        <activity
             android:name=".StartScreenActivity"
-            android:theme="@style/Theme.WhoIsHakaton_Android.NoActionBar"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/Theme.WhoIsHakaton_Android.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".DetaljiActivity2"
             android:exported="true"
@@ -37,9 +40,7 @@
             android:name=".GlavniActivity"
             android:exported="true"
             android:label="@string/title_activity_glavni"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"

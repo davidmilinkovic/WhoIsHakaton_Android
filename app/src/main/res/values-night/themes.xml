@@ -14,6 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="textAppearanceHeadline1">@color/white</item>
         <item name="android:textColor">#ccc</item>
+        <item name="android:fontFamily">@font/poppinsregular</item>
 
     </style>
 </resources>

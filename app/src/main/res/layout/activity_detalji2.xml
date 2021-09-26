@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textColor="?textAppearanceHeadline1"
-            android:text="Keširana verzija" />
+            android:text="@string/kesiranaVerzija" />
     </FrameLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
