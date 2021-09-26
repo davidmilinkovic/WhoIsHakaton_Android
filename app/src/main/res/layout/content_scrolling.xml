@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".DetaljiActivity2"
-    android:paddingTop="30dp"
     tools:showIn="@layout/activity_detalji2">
 
     <LinearLayout
@@ -47,6 +46,52 @@
 
             <LinearLayout
                 android:id="@+id/layoutOsnovniPodaci"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="4dp"
+                android:orientation="vertical">
+
+
+        </LinearLayout>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardElevation="8dp"
+        android:layout_margin="12dp"
+            android:id="@+id/cardDns"
+        app:cardCornerRadius="4dp"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="4dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_baseline_domain_24"
+                app:tint="?colorAccent" />
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:textColor="?textAppearanceHeadline1"
+            android:text="DNS"
+            android:textSize="18sp"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layoutDns"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="24dp"

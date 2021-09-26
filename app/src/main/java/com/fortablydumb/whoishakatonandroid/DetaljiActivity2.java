@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -23,6 +24,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Iterator;
+import java.util.Locale;
 
 public class DetaljiActivity2 extends AppCompatActivity {
 
@@ -75,11 +77,56 @@ public class DetaljiActivity2 extends AppCompatActivity {
             String osnovniPodaci[] = {"Domain Name", "Registrar", "Registration Date", "Expiration date"};
             String osnovniPodaciSrp[] = {"Naziv domena", "Registrar", "Datum registracije", "Datum isteka"};
 
+
+            if(obj.has("dns")) {
+                JSONObject objDns = obj.getJSONObject("dns");
+
+                LinearLayout layoutDns = findViewById(R.id.layoutDns);
+
+                for(int i = 0; i < objDns.names().length(); i++) {
+                    String s = objDns.names().getString(i);
+                    LinearLayout l = new LinearLayout(this);
+                    l.setLayoutParams(new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                    TextView txtNaziv = new TextView(this);
+                    txtNaziv.setText(s.toUpperCase(Locale.ROOT) + ":");
+                    txtNaziv.setLayoutParams(new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.WRAP_CONTENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                    TextView txtVrednost = new TextView(this);
+                    txtVrednost.setText(objDns.getString(s));
+                    txtVrednost.setGravity(Gravity.RIGHT);
+                    txtVrednost.setLayoutParams(new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                    TypedValue tv = new TypedValue();
+                    Resources.Theme theme = getTheme();
+                    theme.resolveAttribute(R.attr.textAppearanceHeadline1, tv, true);
+                    txtVrednost.setTextColor(tv.data);
+
+                    l.addView(txtNaziv);
+                    l.addView(txtVrednost);
+                    l.setPadding(8, 8, 8, 8);
+
+                    layoutDns.addView(l);
+                }
+
+            }
+            else {
+                findViewById(R.id.cardDns).setVisibility(View.GONE);
+            }
+
             LinearLayout layoutOsnovniPodaci = findViewById(R.id.layoutOsnovniPodaci);
             for(int i = 0; i < osnovniPodaci.length; i++) {
                 String s = osnovniPodaci[i];
                 String sSrp = osnovniPodaciSrp[i];
-                if(obj.has(s)) {
+                if (obj.has(s)) {
+
+
                     LinearLayout l = new LinearLayout(this);
                     l.setLayoutParams(new LinearLayout.LayoutParams(
                             LinearLayout.LayoutParams.MATCH_PARENT,
@@ -109,45 +156,42 @@ public class DetaljiActivity2 extends AppCompatActivity {
 
                     layoutOsnovniPodaci.addView(l);
                 }
-
-                LinearLayout layoutSviPodaci = findViewById(R.id.layoutSviPodaci);
-
-                Iterator<String> iter = obj.keys();
-                while (iter.hasNext()) {
-                    s = iter.next();
-                    if(obj.optJSONObject(s) != null) continue;
-                    LinearLayout l = new LinearLayout(this);
-                    l.setLayoutParams(new LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.MATCH_PARENT,
-                            LinearLayout.LayoutParams.WRAP_CONTENT));
-
-                    TextView txtNaziv = new TextView(this);
-                    txtNaziv.setText(s + ":");
-                    txtNaziv.setLayoutParams(new LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.WRAP_CONTENT,
-                            LinearLayout.LayoutParams.WRAP_CONTENT));
-
-                    TextView txtVrednost = new TextView(this);
-                    txtVrednost.setText(obj.getString(s));
-                    txtVrednost.setGravity(Gravity.RIGHT);
-                    txtVrednost.setLayoutParams(new LinearLayout.LayoutParams(
-                            LinearLayout.LayoutParams.MATCH_PARENT,
-                            LinearLayout.LayoutParams.WRAP_CONTENT));
-
-                    TypedValue tv = new TypedValue();
-                    Resources.Theme theme = getTheme();
-                    theme.resolveAttribute(R.attr.textAppearanceHeadline1, tv, true);
-                    txtVrednost.setTextColor(tv.data);
-
-                    l.addView(txtNaziv);
-                    l.addView(txtVrednost);
-                    l.setPadding(8, 8, 8, 8);
-
-                    layoutSviPodaci.addView(l);
-                }
-
             }
 
+            LinearLayout layoutSviPodaci = findViewById(R.id.layoutSviPodaci);
+            for(int i = 0; i < obj.names().length(); i++) {
+                String s = obj.names().getString(i);
+                if(obj.optJSONObject(s) != null) continue;
+
+                LinearLayout l = new LinearLayout(this);
+                l.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                TextView txtNaziv = new TextView(this);
+                txtNaziv.setText(s + ":");
+                txtNaziv.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                TextView txtVrednost = new TextView(this);
+                txtVrednost.setText(obj.getString(s));
+                txtVrednost.setGravity(Gravity.RIGHT);
+                txtVrednost.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                TypedValue tv = new TypedValue();
+                Resources.Theme theme = getTheme();
+                theme.resolveAttribute(R.attr.textAppearanceHeadline1, tv, true);
+                txtVrednost.setTextColor(tv.data);
+
+                l.addView(txtNaziv);
+                l.addView(txtVrednost);
+                l.setPadding(8, 8, 8, 8);
+
+                layoutSviPodaci.addView(l);
+            }
         }
         catch (Exception ex) {
             ex.printStackTrace();
