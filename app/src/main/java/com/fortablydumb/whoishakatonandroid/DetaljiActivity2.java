@@ -115,6 +115,7 @@ public class DetaljiActivity2 extends AppCompatActivity {
                 Iterator<String> iter = obj.keys();
                 while (iter.hasNext()) {
                     s = iter.next();
+                    if(obj.optJSONObject(s) != null) continue;
                     LinearLayout l = new LinearLayout(this);
                     l.setLayoutParams(new LinearLayout.LayoutParams(
                             LinearLayout.LayoutParams.MATCH_PARENT,
