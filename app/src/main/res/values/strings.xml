@@ -130,7 +130,7 @@
     <string name="datumRegistracije">Datum registracije</string>
     <string name="datumIsteka">Datum isteka</string>
     <string name="isticeZa">Ističe za</string>
-    <string name="dana">\" dana\"</string>
+    <string name="dana">dana</string>
     <string name="komunikacijaSaServerom">Komunikacija sa serverom...</string>
     <string name="alarmUspesnoKreiran">Uspešno ste kreirali alarm za domen!</string>
     <string name="alarmVecPostoji">Alarm za ovaj domen je već kreiran.</string>
