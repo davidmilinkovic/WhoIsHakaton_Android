@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".DetaljiActivity2"
-    android:paddingTop="30dp"
     tools:showIn="@layout/activity_detalji2">
 
     <LinearLayout
@@ -14,10 +13,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
+        <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         app:cardElevation="8dp"
-        android:layout_margin="12dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="12dp"
         app:cardCornerRadius="4dp"
         android:layout_height="wrap_content">
 
@@ -39,7 +40,7 @@
             android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:textColor="?textAppearanceHeadline1"
-            android:text="Osnovni podaci"
+            android:text="@string/osnovniPodaci"
             android:textSize="18sp"
             android:layout_height="wrap_content" />
         </LinearLayout>
@@ -58,10 +59,192 @@
         </LinearLayout>
     </LinearLayout>
     </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
+        <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardElevation="8dp"
+            android:layout_margin="12dp"
+            android:id="@+id/cardRegistrant"
+        app:cardCornerRadius="4dp"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="4dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_twotone_person_32"
+                app:tint="?colorAccent" />
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:textColor="?textAppearanceHeadline1"
+            android:text="@string/kontaktRegistrant"
+            android:textSize="18sp"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layoutRegistrant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="4dp"
+                android:orientation="vertical">
+
+
+        </LinearLayout>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         app:cardElevation="8dp"
         android:layout_margin="12dp"
+        app:cardCornerRadius="4dp"
+            android:id="@+id/cardAdmin"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="4dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_baseline_domain_24"
+                app:tint="?colorAccent" />
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:textColor="?textAppearanceHeadline1"
+            android:text="@string/kontaktAdministrator"
+            android:textSize="18sp"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layoutAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="4dp"
+                android:orientation="vertical">
+
+
+        </LinearLayout>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardElevation="8dp"
+            android:id="@+id/cardTech"
+            android:layout_margin="12dp"
+        app:cardCornerRadius="4dp"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="4dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_twotone_assignment_ind_32"
+                app:tint="?colorAccent" />
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:textColor="?textAppearanceHeadline1"
+            android:text="@string/kontaktTeh"
+            android:textSize="18sp"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layoutTech"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="4dp"
+                android:orientation="vertical">
+
+
+        </LinearLayout>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardElevation="8dp"
+        android:layout_margin="12dp"
+            android:id="@+id/cardDns"
+        app:cardCornerRadius="4dp"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="4dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_baseline_wifi_tethering_32"
+                app:tint="?colorAccent" />
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:textColor="?textAppearanceHeadline1"
+            android:text="DNS"
+            android:textSize="18sp"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layoutDns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="4dp"
+                android:orientation="vertical">
+
+
+        </LinearLayout>
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardElevation="8dp"
+            android:layout_marginBottom="400dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="12dp"
         app:cardCornerRadius="4dp"
         android:layout_height="wrap_content">
 
@@ -83,7 +266,7 @@
             android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:textColor="?textAppearanceHeadline1"
-            android:text="Svi podaci"
+            android:text="@string/sviPodaci"
             android:textSize="18sp"
             android:layout_height="wrap_content" />
         </LinearLayout>

@@ -8,18 +8,18 @@
     <fragment
         android:id="@+id/navigation_omiljeni"
         android:name="com.fortablydumb.whoishakatonandroid.ui.home.OmiljeniFragment"
-        android:label="Omiljeni"
+        android:label="@string/omiljeni"
         tools:layout="@layout/fragment_omiljeni" />
 
     <fragment
         android:id="@+id/navigation_pretraga"
         android:name="com.fortablydumb.whoishakatonandroid.ui.dashboard.PretragaFragment"
-        android:label="Pretraga"
+        android:label="@string/pretraga"
         tools:layout="@layout/fragment_pretraga" />
 
     <fragment
         android:id="@+id/navigation_istorija"
         android:name="com.fortablydumb.whoishakatonandroid.ui.notifications.IstorijaFragment"
-        android:label="Istorija"
+        android:label="@string/istorija"
         tools:layout="@layout/fragment_istorija" />
 </navigation>

@@ -2,9 +2,14 @@ package com.fortablydumb.whoishakatonandroid.ui.notifications;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,18 +31,19 @@ public class SwipeCallbackIstorija extends ItemTouchHelper.SimpleCallback {
     }
     @Override
     public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
         super.onChildDraw(c, recyclerView, viewHolder, dX,
                 dY, actionState, isCurrentlyActive);
         View itemView = viewHolder.itemView;
         int backgroundCornerOffset = 20;
         if (dX > 0) { // Swiping to the right
-            background = new ColorDrawable(Color.GREEN);
+            background = new ColorDrawable(mAdapter.getContext().getColor(R.color.akcent));
             background.setBounds(itemView.getLeft(), itemView.getTop(),
                     itemView.getLeft() + ((int) dX) + backgroundCornerOffset,
                     itemView.getBottom());
 
         } else if (dX < 0) { // Swiping to the left
-            background = new ColorDrawable(Color.RED);
+            background = new ColorDrawable(mAdapter.getContext().getColor(R.color.fav));
             background.setBounds(itemView.getRight() + ((int) dX) - backgroundCornerOffset,
                     itemView.getTop(), itemView.getRight(), itemView.getBottom());
         } else { // view is unSwiped

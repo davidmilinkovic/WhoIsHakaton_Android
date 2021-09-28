@@ -1,35 +1,29 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory app:title="@string/messages_header">
+    <ListPreference
+        app:key="pismo"
+        app:entryValues="@array/pismoVal"
+        android:entries="@array/pismoEnt"
+        app:defaultValue="lat"
+        app:title="@string/pismoApp"
+        app:useSimpleSummaryProvider="true"
+        />
+
+
+    <PreferenceCategory app:title="@string/alarmiZaDomene">
 
         <EditTextPreference
-            app:key="signature"
-            app:title="@string/signature_title"
-            app:useSimpleSummaryProvider="true" />
+            app:key="email"
+            app:defaultValue=""
+            app:title="@string/vasaEmail"
+            />
 
-        <ListPreference
-            app:defaultValue="reply"
-            app:entries="@array/reply_entries"
-            app:entryValues="@array/reply_values"
-            app:key="reply"
-            app:title="@string/reply_title"
-            app:useSimpleSummaryProvider="true" />
+        <Preference
+            app:key="ponistiPush"
+            app:title="@string/ponistiPush" />
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="@string/sync_header">
-
-        <SwitchPreferenceCompat
-            app:key="sync"
-            app:title="@string/sync_title" />
-
-        <SwitchPreferenceCompat
-            app:dependency="sync"
-            app:key="attachment"
-            app:summaryOff="@string/attachment_summary_off"
-            app:summaryOn="@string/attachment_summary_on"
-            app:title="@string/attachment_title" />
-
-    </PreferenceCategory>
 
 </PreferenceScreen>

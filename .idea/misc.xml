@@ -3,23 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/drawable/ic_diagonal.xml" value="0.264" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.3140625" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.3967479674796748" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/activity_base.xml" value="0.1" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/activity_detalji.xml" value="0.25416666666666665" />
-        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/activity_detalji2.xml" value="0.3323615160349854" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/activity_detalji2.xml" value="0.4" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/activity_glavni.xml" value="0.25416666666666665" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/content_scrolling.xml" value="0.264" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/activity_start_screen.xml" value="0.264" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/content_scrolling.xml" value="0.4" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/domen_list_item.xml" value="0.4" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/fragment_dashboard.xml" value="0.13020833333333334" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/fragment_istorija.xml" value="0.25416666666666665" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/fragment_omiljeni.xml" value="0.25416666666666665" />
-        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/fragment_pretraga.xml" value="0.4" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/fragment_pretraga.xml" value="0.176" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/layout/settings_activity.xml" value="0.25416666666666665" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/menu/glavni_activity_menu.xml" value="0.536" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/menu/menu_detalji_activity2.xml" value="0.20854700854700856" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/menu/up_nav_menu.xml" value="0.10811965811965812" />
         <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.12008547008547009" />
-        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/xml/root_preferences.xml" value="0.536" />
+        <entry key="..\:/Android projekti/WhoIsHakaton_Android/app/src/main/res/xml/root_preferences.xml" value="0.264" />
       </map>
     </option>
   </component>

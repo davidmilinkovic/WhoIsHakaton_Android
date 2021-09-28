@@ -5,10 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:gravity="center_horizontal|center_vertical"
     tools:context=".ui.dashboard.PretragaFragment">
 
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardElevation="12dp">
     <LinearLayout
         android:orientation="vertical"
         android:gravity="center_vertical"
@@ -22,10 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:background="@color/white"
-            android:textColor="@color/black"
-            android:textColorHint="#ccc"
-            android:hint="Unesite domen za pretragu..."
+            android:hint="@string/unesiteDomen"
             android:padding="014dp"
             android:minHeight="48dp"
             android:inputType="textUri"
@@ -37,13 +40,14 @@
             android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:padding="16dp"
-            android:text="Pretraga"
+            android:backgroundTint="?colorAccent"
+            android:text="@string/pretraga"
             android:textAllCaps="false"
             android:drawableLeft="@drawable/ic_baseline_search_24"
             android:drawableTint="@color/white"
             android:textColor="@color/white"
-            android:textAlignment="viewStart"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>
